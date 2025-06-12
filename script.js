@@ -341,3 +341,23 @@ document.querySelectorAll('.social-icons a').forEach(icon => {
 
 
 
+// Wait for window load
+    window.addEventListener('load', function() {
+      const loader = document.getElementById('loader');
+      const content = document.getElementById('content');
+      
+      // Fade out loader
+      loader.style.opacity = '0';
+      
+      // After fade out completes, remove loader and show content
+      setTimeout(function() {
+        loader.style.display = 'none';
+        content.classList.add('loaded');
+      }, 500); // Match this with your CSS transition time
+    });
+    
+    // Optional: Show loader immediately if content takes time to load
+    document.addEventListener('DOMContentLoaded', function() {
+      const loader = document.getElementById('loader');
+      loader.style.opacity = '1';
+    });

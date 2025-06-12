@@ -42,7 +42,9 @@ body,html {
 
 /* Header Styles */
 header {
-  background-color:#5f259f;
+  background-color:var(--dark);
+  border: solid 1px;
+  border-color: #383838;
   border-radius:10px; /* rounded-full equivalent */
   max-width:1200px;
   margin: 24px auto 0; /* mt-6 equivalent */
@@ -50,6 +52,7 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 15px 24px; /* py-2 px-6 equivalent */
+  max-height: 50px;
 }
 
 .logo-container {
@@ -184,6 +187,76 @@ header {
 .button:focus .send-icon {
   transform: rotate(-40deg);
 }
+
+/*LOADER CONTENT From Uiverse.io by Z4drus */ 
+    .loader-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      
+    }
+    
+    .loader {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      position: relative;
+    }
+    
+    .loader svg {
+      width: 100%;
+      height: 100%;
+      animation: rotate-svg 2s linear infinite;
+      transform-origin: center center;
+    }
+    
+    .loader-circle {
+      fill: none;
+      stroke-width: 8;
+      stroke-linecap: round;
+    }
+    
+    .circle-1 {
+      stroke-dasharray: 251.3274; /* 2 * π * 40 */
+      stroke-dashoffset: 251.3274;
+      animation: dash-circle1 1.5s cubic-bezier(0.66, 0, 0.34, 1) infinite alternate;
+    }
+    
+    .circle-2 {
+      stroke-dasharray: 188.4956; /* 2 * π * 30 */
+      stroke-dashoffset: 0;
+      animation: dash-circle2 1.5s cubic-bezier(0.66, 0, 0.34, 1) infinite alternate;
+    }
+    
+    @keyframes rotate-svg {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    
+    @keyframes dash-circle1 {
+      0% {
+        stroke-dashoffset: 251.3274;
+      }
+      100% {
+        stroke-dashoffset: 0;
+      }
+    }
+    
+    @keyframes dash-circle2 {
+      0% {
+        stroke-dashoffset: 0;
+      }
+      100% {
+        stroke-dashoffset: 188.4956;
+      }
+    }
 /* ------------------------------------------------ app promo section ---------------------------------------------------*/
 .container1 {
   width: 1100px;

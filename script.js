@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function updateProgress() {
     const percent = (video.currentTime / video.duration) * 100;
     progressBar.style.width = `${percent}%`;
-    seek.value = percent;
+    seekSlider.value = percent;
     currentTimeDisplay.textContent = formatTime(video.currentTime);
   }
 
@@ -312,6 +312,11 @@ document.addEventListener('DOMContentLoaded', function() {
   video.volume = 0.8;
   volumeSlider.value = 80;
 });
+  
+       
+  
+   
+
 
 // Handle form submission
 document.getElementById('subscribeForm').addEventListener('submit', function(e) {

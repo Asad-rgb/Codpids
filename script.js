@@ -366,3 +366,11 @@ document.querySelectorAll('.social-icons a').forEach(icon => {
       const loader = document.getElementById('loader');
       loader.style.opacity = '1';
     });
+
+
+
+
+document.getElementById("myButton").addEventListener("click", function() {
+    window.location.href = "https://codpids-disease-detection.onrender.com";
+  });
+
